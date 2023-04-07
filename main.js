@@ -8,12 +8,17 @@ var generateMessageButton = document.querySelector('#generate-new-message-button
 var affirmationCheckbox = document.querySelector('#affirmation');
 var mantraCheckbox = document.querySelector('#mantra');
 var messageDisplayBox = document.querySelector('#display-message-box')
+var createMessageButton = doucument.querySelector('click', showCreateMessageForm)
+var createMessageForm = document.querySelector('#create-message-form')
 
 //Event Listeners
 generateMessageButton.addEventListener('click', function(event) {
     event.preventDefault()
     displayRandomMessage()
   })
+
+
+//Functions
 
   function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
@@ -26,4 +31,8 @@ function displayRandomMessage(){
     } else {
         messageDisplayBox.innerHTML = `<p>${mantras[getRandomIndex(mantras)]}</p>`
     }
+}
+
+function showCreateMessageForm(){
+  createMessageForm.classList.remove('hidden')
 }

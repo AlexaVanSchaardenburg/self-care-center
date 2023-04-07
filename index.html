@@ -20,7 +20,26 @@
       <label for="mantra">mantra</label>
     </div>
     <div>
-      <button id="generate-new-message-button">Recieve Message</button>
+      <button id="generate-new-message-button hidden">Recieve Message</button>
+    </div>
+  </form>
+  <button class="" id="create-message-button">Create Personal Message</button>
+  <form class="display-box hidden" id="create-message-form'">
+    <div>
+      <span id="affirmation-select">
+        <input type="radio" name="random-message-type" id="affirmation" value="affirmation" class="message-type"
+          checked>
+        <label for="affirmation">affirmation</label>
+      </span>
+      <input type="radio" name="random-message-type" id="affirmation" value="mantra" class="message-type" checked>
+      <label for="mantra">mantra</label>
+    </div>
+    <div>
+      <label for="user-created-message">Your message</label>
+      <input type="text" id="user-created-message">
+    </div>
+    <div>
+      <button id="add-message-button">Add Message</button>
     </div>
   </form>
   <div class="display-box" id="display-message-box">
