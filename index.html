@@ -23,8 +23,22 @@
       <button id="generate-new-message-button">Recieve Message</button>
     </div>
   </form>
+  <button id="add-message-button">Add Message</button>
   <div class="display-box" id="display-message-box">
-    <img id="meditation-pic" src="assets/meditate.svg">
+    <img class ="meditation-pic" src="assets/meditate.svg">
+    <section class="view form hidden">
+      <form>
+        <label for="message-type-select">What type of message are you creating?</label>
+        <select id="message-type-select">
+          <option value="">--Select--</option>
+          <option value="affirmation">Affirmation</option>
+          <option value="mantra">Mantra</option>
+        </select>
+        <label for="message">Your message:</label>
+        <input class="user-message" type="text" id="message" />
+        <button id="submit-message-button">Make my book</button>
+      </form>
+    </section>
   </div>
   <script type="text/javascript" src="main.js"></script>
 </body>

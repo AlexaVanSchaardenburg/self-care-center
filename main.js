@@ -8,6 +8,10 @@ var generateMessageButton = document.querySelector('#generate-new-message-button
 var affirmationCheckbox = document.querySelector('#affirmation');
 var mantraCheckbox = document.querySelector('#mantra');
 var messageDisplayBox = document.querySelector('#display-message-box')
+var addMessageButton = document.querySelector('#add-message-button')
+var submitMessageButton = document.querySelector('#submit-message-button')
+var createMessageForm = document.querySelector('.form')
+var meditationImg = document.querySelector('.meditation-pic')
 
 //Event Listeners
 generateMessageButton.addEventListener('click', function(event) {
@@ -15,15 +19,52 @@ generateMessageButton.addEventListener('click', function(event) {
     displayRandomMessage()
   })
 
-  function getRandomIndex(array) {
-    return Math.floor(Math.random() * array.length);
-  };
+addMessageButton.addEventListener('click', displayAddMessageForm)
+
+submitMessageButton.addEventListener('click', function(event) {
+  event.preventDefault()
+  displayRandomMessage()
+})
+
+//Functions
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+ };
   
 function displayRandomMessage(){
-    messageDisplayBox.innerHTML = '';
     if(affirmationCheckbox.checked){
-        messageDisplayBox.innerHTML = `<p>${affirmations[getRandomIndex(affirmations)]}</p>`
+        messageDisplayBox.innerHTML = `<p class="message">${affirmations[getRandomIndex(affirmations)]}</p>`
     } else {
-        messageDisplayBox.innerHTML = `<p>${mantras[getRandomIndex(mantras)]}</p>`
+        messageDisplayBox.innerHTML = `<p class="message">${mantras[getRandomIndex(mantras)]}</p>`
     }
 }
+
+function displayAddMessageForm(){
+  createMessageForm.classList.remove('hidden')
+  meditationImg.classList.add('hidden')
+}
+
+function displayCreatedMessage(){
+  messageDisplayBox.innerHTML = `<p>:P</p>`
+};
+//vars needed
+  //make message button
+  //users input (from box)
+  //submit button
+
+//event listeners
+  //make message button click ==> displays form 
+  //submit button click ==> saves message to correct array, replaces form with message
+
+//functions
+  //display form to make message function
+    //replaces meditation image with form using innerHTML
+  //createUserMessage 
+    //invokes a save message function (based off which message type was selected in drop down menu)
+    //replaces messageDisplayBox.innerHTML with the new message (from user input)
+
+//FORM
+  //drop down menu with message types
+  //input box
+  //submit button
+
