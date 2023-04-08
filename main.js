@@ -8,63 +8,57 @@ var generateMessageButton = document.querySelector('#generate-new-message-button
 var affirmationCheckbox = document.querySelector('#affirmation');
 var mantraCheckbox = document.querySelector('#mantra');
 var messageDisplayBox = document.querySelector('#display-message-box')
-var addMessageButton = document.querySelector('#add-message-button')
-var submitMessageButton = document.querySelector('#submit-message-button')
-var createMessageForm = document.querySelector('.form')
-var meditationImg = document.querySelector('.meditation-pic')
+var createMessageButton = document.querySelector('#create-message-button')
+var createMessageBox = document.querySelector('#create-message-box')
+var addMessageButton = document.querySelector('#generate-new-message-button')
+var affirmationUserCheckbox = document.querySelector('#affirmation-user')
+var mantraUserCheckbox = document.querySelector('#mantra-user')
+var userMessage = document.querySelector('#user-message')
+var meditationPic = document.querySelector('.meditation-pic')
+var message = document.querySelector('.message')
 
 //Event Listeners
-generateMessageButton.addEventListener('click', function(event) {
-    event.preventDefault()
-    displayRandomMessage()
-  })
-
-addMessageButton.addEventListener('click', displayAddMessageForm)
-
-submitMessageButton.addEventListener('click', function(event) {
+generateMessageButton.addEventListener('click', function (event) {
   event.preventDefault()
   displayRandomMessage()
+})
+createMessageButton.addEventListener('click', displayCreateMessageForm)
+addMessageButton.addEventListener('click', function (event) {
+  event.preventDefault()
+  createUserMessage()
 })
 
 //Functions
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
- };
-  
-function displayRandomMessage(){
-    if(affirmationCheckbox.checked){
-        messageDisplayBox.innerHTML = `<p class="message">${affirmations[getRandomIndex(affirmations)]}</p>`
-    } else {
-        messageDisplayBox.innerHTML = `<p class="message">${mantras[getRandomIndex(mantras)]}</p>`
-    }
-}
-
-function displayAddMessageForm(){
-  createMessageForm.classList.remove('hidden')
-  meditationImg.classList.add('hidden')
-}
-
-function displayCreatedMessage(){
-  messageDisplayBox.innerHTML = `<p>:P</p>`
 };
-//vars needed
-  //make message button
-  //users input (from box)
-  //submit button
 
-//event listeners
-  //make message button click ==> displays form 
-  //submit button click ==> saves message to correct array, replaces form with message
+function displayRandomMessage() {
+  meditationPic.classList.add('hidden')
+  message.classList.remove('hidden')
+  if (affirmationCheckbox.checked) {
+    message.innerText = affirmations[getRandomIndex(affirmations)]
+  } else {
+    message.innerText = mantras[getRandomIndex(mantras)]
+  }
+}
 
-//functions
-  //display form to make message function
-    //replaces meditation image with form using innerHTML
-  //createUserMessage 
-    //invokes a save message function (based off which message type was selected in drop down menu)
-    //replaces messageDisplayBox.innerHTML with the new message (from user input)
+function displayCreateMessageForm() {
+  createMessageBox.classList.remove('hidden')
+}
 
-//FORM
-  //drop down menu with message types
-  //input box
-  //submit button
+function createUserMessage() {
+  console.log(affirmationUserCheckbox)
+  if (affirmationUserCheckbox.checked) {
+    affirmations.push(userMessage.value)
+  } else {
+    mantras.push(userMessage.value)
+  }
+  displayUserMessage()
+}
 
+function displayUserMessage() {
+  meditationPic.classList.add('hidden')
+  message.classList.remove('hidden')
+  message.innerText = userMessage.value
+}

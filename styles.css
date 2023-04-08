@@ -73,9 +73,17 @@ button{
     width: 55%;
 }
 
-#add-message-button{
+#create-message-button{
     margin-bottom: 30px;
-    background:#78a7c6
+}
+
+#create-message-box{
+    height: 100px;
+    width: 40%;
+}
+
+.hidden{
+    display: none
 }
 
 
