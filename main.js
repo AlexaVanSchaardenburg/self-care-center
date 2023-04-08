@@ -43,14 +43,6 @@ function displayUserMessageForm(){
   userMessageForm.classList.remove('hidden')
 }
 
-// function displayUserMessage(){
-//   var userMessage = document.getElementById('user-message').value;
-//   message.innerText = userMessage
-//   img.classList.add('hidden')
-//   message.classList.remove('hidden')
-//   saveUserMessage(userMessage)
-// }
-
 function displayUserMessage(){
   var userMessage = document.getElementById('user-message').value;
   if (userMessage === ''){
@@ -69,8 +61,6 @@ function saveUserMessage(userMessage){
   } else {
     mantras.push(userMessage)
   }
-  console.log(mantras)
-  console.log(affirmations)
 }
 
 function displayError(){
