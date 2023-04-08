@@ -18,10 +18,13 @@ var meditationPic = document.querySelector('.meditation-pic')
 var message = document.querySelector('.message')
 
 //Event Listeners
-generateMessageButton.addEventListener('click', function (event) {
-  event.preventDefault()
-  displayRandomMessage()
-})
+// generateMessageButton.addEventListener('click', function (event) {
+//   event.preventDefault()
+//   displayRandomMessage()
+// })
+
+generateMessageButton.addEventListener('click', displayRandomMessage)
+
 createMessageButton.addEventListener('click', displayCreateMessageForm)
 addMessageButton.addEventListener('click', function (event) {
   event.preventDefault()
@@ -37,9 +40,12 @@ function displayRandomMessage() {
   meditationPic.classList.add('hidden')
   message.classList.remove('hidden')
   if (affirmationCheckbox.checked) {
-    message.innerText = affirmations[getRandomIndex(affirmations)]
+    message.value = affirmations[getRandomIndex(affirmations)]
+    console.log(affirmations[getRandomIndex(affirmations)])
+    console.log(message)
   } else {
     message.innerText = mantras[getRandomIndex(mantras)]
+    console.log('mantra checkbox checked')
   }
 }
 
@@ -48,7 +54,6 @@ function displayCreateMessageForm() {
 }
 
 function createUserMessage() {
-  console.log(affirmationUserCheckbox)
   if (affirmationUserCheckbox.checked) {
     affirmations.push(userMessage.value)
   } else {
