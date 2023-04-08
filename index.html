@@ -23,22 +23,28 @@
       <button id="generate-new-message-button">Recieve Message</button>
     </div>
   </form>
-  <button id="add-message-button">Add Message</button>
+  <button id="create-message-button">Create Message</button>
+  <form class="display-box hidden" id="create-message-box">
+    <div>
+      <span id="affirmation-select">
+        <input type="radio" name="created-message-type" id="affirmation-user" value="affirmation" class="message-type"
+          checked>
+        <label for="affirmation">affirmation</label>
+      </span>
+      <input type="radio" name="created-message-type" id="mantra-user" value="mantra" class="message-type" checked>
+      <label for="mantra">mantra</label>
+    </div>
+    <div>
+      <label for="user-message">Your message:</label>
+      <input type="text" id="user-message" value="">
+    </div>
+    <div>
+      <button id="generate-new-message-button">Add Message</button>
+    </div>
+  </form>
   <div class="display-box" id="display-message-box">
-    <img class ="meditation-pic" src="assets/meditate.svg">
-    <section class="view form hidden">
-      <form>
-        <label for="message-type-select">What type of message are you creating?</label>
-        <select id="message-type-select">
-          <option value="">--Select--</option>
-          <option value="affirmation">Affirmation</option>
-          <option value="mantra">Mantra</option>
-        </select>
-        <label for="message">Your message:</label>
-        <input class="user-message" type="text" id="message" />
-        <button id="submit-message-button">Make my book</button>
-      </form>
-    </section>
+    <img class="meditation-pic" src="assets/meditate.svg">
+    <div class="message hidden"></div>
   </div>
   <script type="text/javascript" src="main.js"></script>
 </body>
