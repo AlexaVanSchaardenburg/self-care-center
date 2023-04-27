@@ -10,6 +10,7 @@ Either have the link to the site or fork and clone the gitHub.
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+![Screenshot 2023-04-27 at 11 27 01 AM](https://user-images.githubusercontent.com/125763236/234941768-18d40448-eb2a-4017-ad11-e7cd18d1cf5f.png)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
