@@ -6,7 +6,7 @@ Created a site from scratch to match the provided comp. The site randomly genera
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
-Either have the link to the site or fork and clone the gitHub.
+Fork and clone this repo, open the code and run `open index.html` OR follow this [link](https://alexavanschaardenburg.github.io/self-care-center/)
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
@@ -18,7 +18,7 @@ This took about 10 hours to build independently, I am currently in mod1, week 3.
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
-Just me!
+[Alexa VanSchaardenburg](https://github.com/AlexaVanSchaardenburg)
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
